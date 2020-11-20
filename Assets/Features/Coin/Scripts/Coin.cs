@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using Random = UnityEngine.Random;
 
 public class Coin : MonoBehaviour
 {
-    public int value = 1;
-    public Sensor collectSensor;
     public CoinAnimationController animationController;
+    public Sensor collectSensor;
+    public int value = 1;
 
     private void OnEnable()
     {
         collectSensor.SensorTriggered += CollectSignalDetected;
     }
-    
+
     private void OnDisable()
     {
         collectSensor.SensorTriggered -= CollectSignalDetected;
@@ -29,18 +24,17 @@ public class Coin : MonoBehaviour
 
     public void CollectSignalDetected(object sender, EventArgs args)
     {
-       Collect();
-       
-       // Deactivate sensor.
-       collectSensor.gameObject.SetActive(false);
+        Collect();
+
+        // Deactivate sensor.
+        collectSensor.gameObject.SetActive(false);
     }
-    
+
     public void Collect()
     {
         GameData.Instance.IncreaseScore(value);
         collectSensor.SensorTriggered -= CollectSignalDetected;
         animationController.PlayCollectedAnimation();
-        Destroy(this.gameObject, 3.0f);
+        Destroy(gameObject, 3.0f);
     }
-
 }

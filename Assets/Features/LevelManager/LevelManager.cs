@@ -1,24 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
-
-public class LevelManager: MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
-    [System.Serializable]
-    public struct DifficultyLevelEntry {
-        [SerializeField]
-        public DifficultyLevel difficultyLevel;
-        [SerializeField]
-        public float duration;
-    }
-    
     public DifficultyLevelEntry[] difficulties;
-    public float initialTimeout = 2.0f;
 
     private IEnumerator difficultyManagementCoroutine;
+    public float initialTimeout = 2.0f;
 
     public void Start()
     {
@@ -31,7 +20,7 @@ public class LevelManager: MonoBehaviour
         StopCoroutine(difficultyManagementCoroutine);
     }
 
-    IEnumerator ManageDifficultyLevels()
+    private IEnumerator ManageDifficultyLevels()
     {
         yield return new WaitForSeconds(initialTimeout);
         var i = 0;
@@ -39,10 +28,10 @@ public class LevelManager: MonoBehaviour
         {
             // Activate difficulty level...
             difficulties[i].difficultyLevel.StartSpawnRoutine();
-            
+
             // ... and wait.
             yield return new WaitForSeconds(difficulties[i].duration);
-            
+
             // ... and deactivate the difficulty level.
             difficulties[i].difficultyLevel.StopSpawnRoutine();
 
@@ -52,5 +41,12 @@ public class LevelManager: MonoBehaviour
                 i++;
             }
         }
+    }
+
+    [Serializable]
+    public struct DifficultyLevelEntry
+    {
+        [SerializeField] public DifficultyLevel difficultyLevel;
+        [SerializeField] public float duration;
     }
 }

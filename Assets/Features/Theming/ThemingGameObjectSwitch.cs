@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ThemingGameObjectSwitch : MonoBehaviour
 {
     public GameObject demonsThemeInstance;
-    public GameObject undeadsThemeInstance;
     public GameObject orcsThemeInstance;
+    public GameObject undeadsThemeInstance;
 
     private void Start()
     {
@@ -15,5 +12,4 @@ public class ThemingGameObjectSwitch : MonoBehaviour
         undeadsThemeInstance.SetActive(GameData.Instance.currentLevelTheme == GameData.LevelTheme.Undeads);
         orcsThemeInstance.SetActive(GameData.Instance.currentLevelTheme == GameData.LevelTheme.Orcs);
     }
-
 }

@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-    public GameObject[] loot;
     private Life _life;
+    public GameObject[] loot;
 
     private void OnEnable()
     {
-        if (TryGetComponent<Life>(out _life) == false)
+        if (TryGetComponent(out _life) == false)
         {
             _life = GetComponentInParent<Life>();
         }
-        
+
         _life.Defeated += OnDefeatedSignalDetected;
     }
-    
+
     private void OnDisable()
     {
         _life.Defeated -= OnDefeatedSignalDetected;
@@ -29,7 +27,7 @@ public class Loot : MonoBehaviour
         // Spawn loot.
         foreach (var lootObject in loot)
         {
-            Instantiate(lootObject, this.transform.position, Quaternion.identity);
+            Instantiate(lootObject, transform.position, Quaternion.identity);
         }
     }
 }
