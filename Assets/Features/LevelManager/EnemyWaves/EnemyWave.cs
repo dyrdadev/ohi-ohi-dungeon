@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWave : MonoBehaviour
 {
-    private List<EnemySpawn> _enemySpawns = new List<EnemySpawn>();
+    private readonly List<EnemySpawn> _enemySpawns = new List<EnemySpawn>();
 
     public void RegisterEnemySpawn(EnemySpawn enemySpawn)
     {

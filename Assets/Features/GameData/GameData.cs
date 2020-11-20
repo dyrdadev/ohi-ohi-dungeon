@@ -1,34 +1,29 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Random = System.Random;
-
+﻿using UnityEngine;
 
 public class GameData : SingletonMonoBehaviour<GameData>
 {
-    public int score;
-
-    public void IncreaseScore(int value)
-    {
-        score += value;
-    }
-    
-    public void ResetScore()
-    {
-        score = 0;
-    }
-
     public enum LevelTheme
     {
         Demons,
         Undeads,
         Orcs
     }
-    [HideInInspector]
-    public LevelTheme currentLevelTheme;
-    
-    void GetNextLevelTheme()
+
+    [HideInInspector] public LevelTheme currentLevelTheme;
+
+    public int score;
+
+    public void IncreaseScore(int value)
+    {
+        score += value;
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
+
+    private void GetNextLevelTheme()
     {
         //Array values = Enum.GetValues(typeof(LevelTheme));
         //Random random = new Random();

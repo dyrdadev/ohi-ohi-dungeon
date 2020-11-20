@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class DamageEffect : MonoBehaviour
 {
@@ -13,7 +9,7 @@ public class DamageEffect : MonoBehaviour
     {
         _life = GetComponentInParent<Life>();
     }
-    
+
     public void DamageCauseSignalDetected(object sender, EventArgs args)
     {
         _life.DealDamage(1.0f);

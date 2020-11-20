@@ -1,13 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class DifficultyLevel : MonoBehaviour
 {
-    public float timeBetweenWaves = 1.0f;
     public EnemyWave[] enemyWaves;
     private IEnumerator spawnCoroutine;
+    public float timeBetweenWaves = 1.0f;
 
     public void StartSpawnRoutine()
     {
@@ -20,7 +18,7 @@ public class DifficultyLevel : MonoBehaviour
         StopCoroutine(spawnCoroutine);
     }
 
-    IEnumerator SpawnAndWait()
+    private IEnumerator SpawnAndWait()
     {
         while (true)
         {
