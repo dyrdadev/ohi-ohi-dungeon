@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class ScoreLabel : MonoBehaviour
 {
     private Text _text;
-    public bool withPrefix = true;
     void Start()
     {
         _text = GetComponent<Text>();
@@ -29,6 +28,6 @@ public class ScoreLabel : MonoBehaviour
     
     private void SetScore(int score)
     {
-        _text.text = $"{(withPrefix?"Score ":"")}"+score;
+        _text.text = ""+score;
     }
 }
