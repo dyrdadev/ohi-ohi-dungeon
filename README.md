@@ -1,6 +1,6 @@
 # Ohi Ohi Dungeon
 
-"Ohi Ohi Dungeon" is a small unity game project that was developed for use in lectures at the university. Feel free to use the project for anything you want.
+"Ohi Ohi Dungeon" is a small Unity game project that was developed for use in lectures at the university. Feel free to use the project for anything you want.
 
 ## Third Party Content
 
