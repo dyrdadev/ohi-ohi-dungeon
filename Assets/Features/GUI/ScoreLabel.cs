@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
 public class ScoreLabel : MonoBehaviour
 {
     private Text _text;
-    void Start()
+
+    private void Start()
     {
         _text = GetComponent<Text>();
 
@@ -25,9 +23,9 @@ public class ScoreLabel : MonoBehaviour
     {
         SetScore(args.value);
     }
-    
+
     private void SetScore(int score)
     {
-        _text.text = ""+score;
+        _text.text = "" + score;
     }
 }

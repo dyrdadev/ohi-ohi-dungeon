@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Life : MonoBehaviour
 {
     [SerializeField] private float _life = 1.0f;
+
     public float life
     {
         get => _life;
@@ -20,14 +17,15 @@ public class Life : MonoBehaviour
             }
         }
     }
-    
+
     public event EventHandler Defeated;
+
     protected virtual void OnDefeated()
     {
-        EventHandler handler = Defeated;
+        var handler = Defeated;
         handler?.Invoke(this, EventArgs.Empty);
     }
-    
+
     public void DealDamage(float damage)
     {
         life -= damage;

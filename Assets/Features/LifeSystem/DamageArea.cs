@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DamageArea : MonoBehaviour
 {
     public float damage = 1.0f;
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         var life = other.GetComponent<Life>();
