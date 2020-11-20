@@ -8,4 +8,4 @@
 
 ## Third Party Content
 
-Some assets were created by other people. Check out the [Third Party Notice](/ThirdPartyNotice.md) file for details.
+Many assets of this project were created by other people. Check out the [Third Party Notice](/ThirdPartyNotice.md) file for details.
