@@ -7,34 +7,8 @@ using Random = System.Random;
 
 public class GameData : SingletonMonoBehaviour<GameData>
 {
-    public class ScoreUpdatedEventArgs : EventArgs
-    {
-        public int value;
+    public int score;
 
-        public ScoreUpdatedEventArgs(int value)
-        {
-            this.value = value;
-        }
-    }
-    public event EventHandler<ScoreUpdatedEventArgs> ScoreUpdated;
-    protected virtual void OnScoreUpdated(ScoreUpdatedEventArgs eventArgs)
-    {
-        EventHandler<ScoreUpdatedEventArgs> handler = ScoreUpdated;
-        handler?.Invoke(this, eventArgs);
-    }
-    
-    private int _score;
-    public int score
-    {
-        get => _score;
-        set
-        {
-            _score = value;
-            
-            OnScoreUpdated(new ScoreUpdatedEventArgs(_score));
-        }
-    }
-    
     public void IncreaseScore(int value)
     {
         score += value;
@@ -44,8 +18,7 @@ public class GameData : SingletonMonoBehaviour<GameData>
     {
         score = 0;
     }
-    
-        
+
     public enum LevelTheme
     {
         Demons,
@@ -54,7 +27,6 @@ public class GameData : SingletonMonoBehaviour<GameData>
     }
     [HideInInspector]
     public LevelTheme currentLevelTheme;
-
     
     void GetNextLevelTheme()
     {
@@ -63,7 +35,6 @@ public class GameData : SingletonMonoBehaviour<GameData>
         //currentLevelTheme = (LevelTheme)values.GetValue(random.Next(values.Length));
         currentLevelTheme = LevelTheme.Demons; // Currently only demons is implemented.
     }
-    
 
     public void Reset()
     {
