@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DyrdaIo.Singleton;
 
 public class GameData : SingletonMonoBehaviour<GameData>
 {
