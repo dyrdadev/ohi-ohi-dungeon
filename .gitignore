@@ -62,4 +62,5 @@ crashlytics-build.properties
 /.idea
 
 # UniRx
-/[Pp]lugins/UniRx/
+/[Aa]ssets/[Pp]lugins/UniRx/
+/[Aa]ssets/[Pp]lugins/UniRx.meta
