@@ -1,4 +1,5 @@
 ﻿using System;
+using UniRx;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
@@ -7,14 +8,9 @@ public class Coin : MonoBehaviour
     public Sensor collectSensor;
     public int value = 1;
 
-    private void OnEnable()
+    private void Start()
     {
-        collectSensor.SensorTriggered += CollectSignalDetected;
-    }
-
-    private void OnDisable()
-    {
-        collectSensor.SensorTriggered -= CollectSignalDetected;
+        collectSensor.SensorTriggered.Subscribe(CollectSignalDetected).AddTo(this);
     }
 
     private void Awake()
@@ -22,7 +18,7 @@ public class Coin : MonoBehaviour
         animationController.PlaySpawnAnimation();
     }
 
-    public void CollectSignalDetected(object sender, EventArgs args)
+    public void CollectSignalDetected(EventArgs args)
     {
         Collect();
 
@@ -33,7 +29,6 @@ public class Coin : MonoBehaviour
     public void Collect()
     {
         GameData.Instance.IncreaseScore(value);
-        collectSensor.SensorTriggered -= CollectSignalDetected;
         animationController.PlayCollectedAnimation();
         Destroy(gameObject, 3.0f);
     }

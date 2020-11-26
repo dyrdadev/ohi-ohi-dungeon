@@ -1,9 +1,14 @@
 ﻿using UnityEngine.EventSystems;
+using UniRx;
+using UniRx.Triggers;
+using System;
 
-public class PointerEnterSensor : Sensor, IPointerEnterHandler
+public class PointerEnterSensor : Sensor
 {
-    public void OnPointerEnter(PointerEventData ped)
+    public void Awake()
     {
-        OnSensorTriggered();
+        SensorTriggered = this.gameObject.AddComponent<ObservablePointerEnterTrigger>()
+            .OnPointerEnterAsObservable()
+            .Select(e => EventArgs.Empty);
     }
 }
