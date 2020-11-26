@@ -1,9 +1,14 @@
-﻿using UnityEngine.EventSystems;
+﻿using System;
+using UnityEngine.EventSystems;
+using UniRx;
+using UniRx.Triggers;
 
-public class PointerDownSensor : Sensor, IPointerDownHandler
+public class PointerDownSensor : Sensor
 {
-    public void OnPointerDown(PointerEventData ped)
+    private void Awake()
     {
-        OnSensorTriggered();
+        SensorTriggered = this.gameObject.AddComponent<ObservablePointerDownTrigger>()
+            .OnPointerDownAsObservable()
+            .Select(e => EventArgs.Empty);
     }
 }
