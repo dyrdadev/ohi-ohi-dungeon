@@ -4,6 +4,16 @@ using DyrdaIo.Singleton;
 
 public class GameData : SingletonMonoBehaviour<GameData>
 {
+    public class ScoreUpdatedEventArgs : EventArgs
+    {
+        public int value;
+
+        public ScoreUpdatedEventArgs(int value)
+        {
+            this.value = value;
+        }
+    }
+    
     public enum LevelTheme
     {
         Demons,
@@ -58,15 +68,5 @@ public class GameData : SingletonMonoBehaviour<GameData>
     {
         ResetScore();
         GetNextLevelTheme();
-    }
-
-    public class ScoreUpdatedEventArgs : EventArgs
-    {
-        public int value;
-
-        public ScoreUpdatedEventArgs(int value)
-        {
-            this.value = value;
-        }
     }
 }
