@@ -10,11 +10,11 @@ public class GameData : SingletonMonoBehaviour<GameData>
         Undeads,
         Orcs
     }
-
-    private int _score;
-
+    
     [HideInInspector] public LevelTheme currentLevelTheme;
 
+    private int _score;
+    
     public int score
     {
         get => _score;

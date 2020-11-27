@@ -6,6 +6,7 @@ public class DamageEffect : MonoBehaviour
 {
     private Life _life;
     private Sensor damageCause;
+    public float damage = 1.0f;
 
     private void OnEnable()
     {
@@ -22,6 +23,6 @@ public class DamageEffect : MonoBehaviour
 
     public void DamageCauseSignalDetected(object sender, EventArgs args)
     {
-        _life.DealDamage(1.0f);
+        _life.DealDamage(damage);
     }
 }
