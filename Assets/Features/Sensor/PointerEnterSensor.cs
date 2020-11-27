@@ -4,6 +4,6 @@ public class PointerEnterSensor : Sensor, IPointerEnterHandler
 {
     public void OnPointerEnter(PointerEventData ped)
     {
-        OnSensorTriggered();
+        OnSensorTrigger();
     }
 }

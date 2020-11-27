@@ -13,12 +13,12 @@ public class DamageEffect : MonoBehaviour
         _life = GetComponentInParent<Life>();
 
         damageCause = GetComponent<Sensor>();
-        damageCause.SensorTriggered += DamageCauseSignalDetected;
+        damageCause.SensorTrigger += DamageCauseSignalDetected;
     }
 
     private void OnDisable()
     {
-        damageCause.SensorTriggered -= DamageCauseSignalDetected;
+        damageCause.SensorTrigger -= DamageCauseSignalDetected;
     }
 
     public void DamageCauseSignalDetected(object sender, EventArgs args)

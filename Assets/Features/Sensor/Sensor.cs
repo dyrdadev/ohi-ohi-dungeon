@@ -3,11 +3,11 @@ using UnityEngine;
 
 public abstract class Sensor : MonoBehaviour
 {
-    public event EventHandler SensorTriggered;
+    public event EventHandler SensorTrigger;
 
-    protected virtual void OnSensorTriggered()
+    protected virtual void OnSensorTrigger()
     {
-        var handler = SensorTriggered;
+        var handler = SensorTrigger;
         handler?.Invoke(this, EventArgs.Empty);
     }
 }

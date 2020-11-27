@@ -4,6 +4,6 @@ public class TriggerEnter2DSensor : Sensor
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
-        OnSensorTriggered();
+        OnSensorTrigger();
     }
 }

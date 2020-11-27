@@ -9,12 +9,12 @@ public class Coin : MonoBehaviour
 
     private void OnEnable()
     {
-        collectSensor.SensorTriggered += CollectSignalDetected;
+        collectSensor.SensorTrigger += CollectSignalDetected;
     }
 
     private void OnDisable()
     {
-        collectSensor.SensorTriggered -= CollectSignalDetected;
+        collectSensor.SensorTrigger -= CollectSignalDetected;
     }
 
     private void Awake()
@@ -33,7 +33,7 @@ public class Coin : MonoBehaviour
     public void Collect()
     {
         GameData.Instance.IncreaseScore(value);
-        collectSensor.SensorTriggered -= CollectSignalDetected;
+        collectSensor.SensorTrigger -= CollectSignalDetected;
         animationController.PlayCollectedAnimation();
         Destroy(gameObject, 3.0f);
     }
