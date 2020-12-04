@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using DyrdaIo.Singleton;
+using UniRx;
 
 public class GameData : SingletonMonoBehaviour<GameData>
 {
@@ -11,37 +12,19 @@ public class GameData : SingletonMonoBehaviour<GameData>
         Orcs
     }
 
-    private int _score;
-
+    public ReactiveProperty<int> score = new ReactiveProperty<int>(0);
+   
     [HideInInspector] public LevelTheme currentLevelTheme;
-
-    public int score
-    {
-        get => _score;
-        set
-        {
-            _score = value;
-
-            OnScoreUpdated(new ScoreUpdatedEventArgs(_score));
-        }
-    }
-
-    public event EventHandler<ScoreUpdatedEventArgs> ScoreUpdated;
-
-    protected virtual void OnScoreUpdated(ScoreUpdatedEventArgs eventArgs)
-    {
-        var handler = ScoreUpdated;
-        handler?.Invoke(this, eventArgs);
-    }
+    
 
     public void IncreaseScore(int value)
     {
-        score += value;
+        score.Value += value;
     }
 
     public void ResetScore()
     {
-        score = 0;
+        score.Value = 0;
     }
 
 
@@ -58,15 +41,5 @@ public class GameData : SingletonMonoBehaviour<GameData>
     {
         ResetScore();
         GetNextLevelTheme();
-    }
-
-    public class ScoreUpdatedEventArgs : EventArgs
-    {
-        public int value;
-
-        public ScoreUpdatedEventArgs(int value)
-        {
-            this.value = value;
-        }
     }
 }

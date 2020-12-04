@@ -1,13 +1,8 @@
 ﻿using System;
 using UnityEngine;
+using UniRx;
 
 public abstract class Sensor : MonoBehaviour
 {
-    public event EventHandler SensorTriggered;
-
-    protected virtual void OnSensorTriggered()
-    {
-        var handler = SensorTriggered;
-        handler?.Invoke(this, EventArgs.Empty);
-    }
+    public IObservable<EventArgs> SensorTriggered;
 }
