@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using DyrdaIo.Singleton;
+using DyrdaDev.Singleton;
 using UniRx;
 
 public class GameData : SingletonMonoBehaviour<GameData>
