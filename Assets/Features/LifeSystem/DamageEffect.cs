@@ -12,7 +12,7 @@ public class DamageEffect : MonoBehaviour
         _life = GetComponentInParent<Life>();
     }
 
-    public void DamageCauseSignalDetected(EventArgs args)
+    public void DamageCauseSignalDetected(object sender, EventArgs args)
     {
         _life.DealDamage(damage);
     }
