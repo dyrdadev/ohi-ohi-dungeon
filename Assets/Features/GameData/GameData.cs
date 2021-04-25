@@ -12,11 +12,11 @@ public class GameData : SingletonMonoBehaviour<GameData>
         Undeads,
         Orcs
     }
-
-    public ReactiveProperty<int> score = new ReactiveProperty<int>(0);
-   
+    
     [HideInInspector] public LevelTheme currentLevelTheme;
     private Random LevelThemeRandom = new Random();
+    
+    public int score;
 
     public void Awake()
     {
@@ -25,12 +25,12 @@ public class GameData : SingletonMonoBehaviour<GameData>
 
     public void IncreaseScore(int value)
     {
-        score.Value += value;
+        score += value;
     }
 
     public void ResetScore()
     {
-        score.Value = 0;
+        score = 0;
     }
 
 
