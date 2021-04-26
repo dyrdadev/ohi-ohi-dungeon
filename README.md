@@ -32,6 +32,6 @@ If you want to contribute to this project, you are welcome to do so. Just write 
     <br>
     <br>
     <a href="./README.md">
-        <img src="./Media/Bosses/all_bosses_idle_800.gif" alt="Bosses from the game Ohi Ohi Dungeon"/>
+        <img src="./Media/Bosses/all_bosses_idle_2.gif" alt="Bosses from the game Ohi Ohi Dungeon"/>
     </a>
 </p>
