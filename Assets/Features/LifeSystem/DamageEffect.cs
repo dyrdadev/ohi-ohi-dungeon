@@ -14,7 +14,6 @@ public class DamageEffect : MonoBehaviour
         _life = GetComponentInParent<Life>();
 
         damageCause = GetComponent<Sensor>();
-        damageCause.SensorTriggered.Subscribe(DamageCauseSignalDetected).AddTo(this);
     }
 
     public void DamageCauseSignalDetected(EventArgs args)

@@ -10,7 +10,6 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        collectSensor.SensorTriggered.Subscribe(CollectSignalDetected).AddTo(this);
     }
 
     private void Awake()
