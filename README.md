@@ -1,6 +1,6 @@
 # Ohi Ohi Dungeon
 
-"Ohi Ohi Dungeon" is a small click & collect mobile game developed in Unity. It was originally created as a sample project for use in lectures at the university.
+"Ohi Ohi Dungeon" is a small click & collect mobile game developed in Unity. It was originally created as an example project for use in lectures at the university.
 
 Enter dangerous dungeons with your little companion. Fight demons, orcs and undead. Defend your little hero from approaching enemies and loot the treasures of the dungeon. How long will you last? How many coins can you collect?
 
