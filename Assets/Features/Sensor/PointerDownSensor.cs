@@ -9,6 +9,6 @@ public class PointerDownSensor : Sensor
     {
         SensorTriggered = this.gameObject.AddComponent<ObservablePointerDownTrigger>()
             .OnPointerDownAsObservable()
-            .Select(e => new PositionEventArgs(e.position));
+            .Select(e => new SensorEventArgs(e));
     }
 }

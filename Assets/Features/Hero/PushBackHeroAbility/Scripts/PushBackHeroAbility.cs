@@ -7,9 +7,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(Sensor))]
 [RequireComponent(typeof(Collider2D))]
-public class HeroAbility : MonoBehaviour
+public class PushBackHeroAbility : MonoBehaviour
 {
-	private Collider2D col;
+	private Collider2D _collider;
 	private Sensor activationCause;
 
 	[SerializeField] private float duration = 0.5f;
@@ -25,7 +25,7 @@ public class HeroAbility : MonoBehaviour
 
 	private void Start()
 	{
-		col = GetComponent<Collider2D>();
+		_collider = GetComponent<Collider2D>();
 		activationCause = GetComponent<Sensor>();
 		activationCause.SensorTriggered.Subscribe(ActivateAbility).AddTo(this);
 
@@ -37,39 +37,22 @@ public class HeroAbility : MonoBehaviour
 		if (GameData.Instance.abilityAvailable.Value == true)
 		{
 			EnemyMovement[] allEnemies = Array.ConvertAll(GameObject.FindGameObjectsWithTag("Enemy"), (go) => go.GetComponent<EnemyMovement>());
-			if (allEnemies.Length != 0)
-				StartCoroutine(PushBackEnemies(allEnemies));
+			for (int i = 0; i < allEnemies.Length; i++)
+			{
+				allEnemies[i].PushBack(duration, strength, speedChangeCurve);
+			}
 
 			abilityVFX.SetActive(true);
 			StartCoroutine(StartCooldown());
 		}
 	}
 
-	private IEnumerator PushBackEnemies(EnemyMovement[] enemies)
-	{
-		float timer = 0;
-
-		float originalSpeed = enemies[0].speed;
-
-		while (timer < duration)
-		{
-			for (int i = 0; i < enemies.Length; i++)
-				enemies[i].speed = originalSpeed - (speedChangeCurve.Evaluate(timer / duration) * originalSpeed * strength * 2);
-
-			yield return new WaitForSecondsRealtime(Time.deltaTime);
-			timer += Time.deltaTime;
-		}
-
-		for (int i = 0; i < enemies.Length; i++)
-			enemies[i].speed = originalSpeed;
-	}
-
 	private IEnumerator StartCooldown()
 	{
 		GameData.Instance.SetAbilityAvailable(false);
-		col.enabled = false;
+		_collider.enabled = false;
 		yield return new WaitForSeconds(cooldownDuration);
 		GameData.Instance.SetAbilityAvailable(true);
-		col.enabled = true;
+		_collider.enabled = true;
 	}
 }

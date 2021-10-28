@@ -10,11 +10,11 @@ public class DamageEffect : MonoBehaviour
     public float damage = 1.0f;
     [Space(5)]
     public GameObject damageVFX;
-    private Camera _cam;
+    private Camera _camera;
 
     private void Start()
     {
-        _cam = Camera.main;
+        _camera = Camera.main;
         _life = GetComponentInParent<Life>();
 
         damageCause = GetComponent<Sensor>();
@@ -25,7 +25,7 @@ public class DamageEffect : MonoBehaviour
     {
         _life.DealDamage(damage);
 
-        Vector3 pos = (args is PositionEventArgs) ? _cam.ScreenToWorldPoint(((PositionEventArgs)args).screenPosition) : transform.position;
+        Vector3 pos = (args is SensorEventArgs) ? _camera.ScreenToWorldPoint(((SensorEventArgs)args).associatedPointerPayload.position) : transform.position;
         Instantiate(damageVFX, new Vector3(pos.x, pos.y, damageVFX.transform.position.z), Quaternion.identity);
     }
 }

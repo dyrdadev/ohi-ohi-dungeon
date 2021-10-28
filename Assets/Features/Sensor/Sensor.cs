@@ -8,12 +8,12 @@ public abstract class Sensor : MonoBehaviour
     public IObservable<EventArgs> SensorTriggered;
 }
 
-public class PositionEventArgs : EventArgs
+public class SensorEventArgs : EventArgs
 {
-    public readonly Vector2 screenPosition;
+    public readonly PointerEventData associatedPointerPayload;
 
-    public PositionEventArgs(Vector2 pos) : base()
+    public SensorEventArgs(PointerEventData pointerPayload) : base()
     {
-        screenPosition = pos;
+        associatedPointerPayload = pointerPayload;
     }
 }
