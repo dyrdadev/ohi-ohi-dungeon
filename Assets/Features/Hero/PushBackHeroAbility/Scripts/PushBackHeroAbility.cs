@@ -36,6 +36,7 @@ public class PushBackHeroAbility : MonoBehaviour
 	{
 		if (GameData.Instance.abilityAvailable.Value == true)
 		{
+			// To the future people: Implement a nicer way to access the enemies here.
 			EnemyMovement[] allEnemies = Array.ConvertAll(GameObject.FindGameObjectsWithTag("Enemy"), (go) => go.GetComponent<EnemyMovement>());
 			for (int i = 0; i < allEnemies.Length; i++)
 			{

@@ -25,7 +25,11 @@ public class DamageEffect : MonoBehaviour
     {
         _life.DealDamage(damage);
 
-        Vector3 pos = (args is SensorEventArgs) ? _camera.ScreenToWorldPoint(((SensorEventArgs)args).associatedPointerPayload.position) : transform.position;
-        Instantiate(damageVFX, new Vector3(pos.x, pos.y, damageVFX.transform.position.z), Quaternion.identity);
+        if (args is SensorEventArgs && ((SensorEventArgs)args).associatedPointerPayload.position != null)
+        {
+            Vector3 pos = _camera.ScreenToWorldPoint(((SensorEventArgs)args).associatedPointerPayload.position);
+            Instantiate(damageVFX, new Vector3(pos.x, pos.y, damageVFX.transform.position.z), Quaternion.identity);
+        }
+        
     }
 }
