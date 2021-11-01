@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System;
+using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -25,5 +27,27 @@ public class EnemyMovement : MonoBehaviour
                 spriteRenderers[i].flipX = true;
             }
         }
+    }
+
+    public void PushBack(float duration, float strength, AnimationCurve speedChangeCurve)
+    {
+        StartCoroutine(PushBackRoutine(duration, strength, speedChangeCurve));
+    }
+
+    private IEnumerator PushBackRoutine(float duration, float strength, AnimationCurve speedChangeCurve )
+    {
+        float timer = 0;
+
+        float originalSpeed = speed;
+
+        while (timer < duration)
+        {
+            speed = originalSpeed - (speedChangeCurve.Evaluate(timer / duration) * originalSpeed * strength * 2);
+
+            yield return new WaitForSecondsRealtime(Time.deltaTime);
+            timer += Time.deltaTime;
+        }
+        
+        speed = originalSpeed;
     }
 }

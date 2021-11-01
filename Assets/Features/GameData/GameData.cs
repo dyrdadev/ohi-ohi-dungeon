@@ -14,6 +14,7 @@ public class GameData : SingletonMonoBehaviour<GameData>
     }
 
     public ReactiveProperty<int> score = new ReactiveProperty<int>(0);
+    public ReactiveProperty<bool> abilityAvailable = new ReactiveProperty<bool>(false);
    
     [HideInInspector] public LevelTheme currentLevelTheme;
     private Random LevelThemeRandom = new Random();
@@ -31,6 +32,11 @@ public class GameData : SingletonMonoBehaviour<GameData>
     public void ResetScore()
     {
         score.Value = 0;
+    }
+
+    public void SetAbilityAvailable(bool value)
+    {
+        abilityAvailable.Value = value;
     }
 
 
