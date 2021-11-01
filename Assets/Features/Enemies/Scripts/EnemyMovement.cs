@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        var targetPosition = target ? target.position : new Vector3(0, 0, 0);
+        var targetPosition = target ? target.position : new Vector3(0, -0.75f, 0);
         transform.position = Vector3.MoveTowards(
             transform.position,
             targetPosition,
