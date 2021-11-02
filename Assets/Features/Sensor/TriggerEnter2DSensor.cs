@@ -4,6 +4,6 @@ public class TriggerEnter2DSensor : MonoBehaviour // Change "MonoBehaviour" to "
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
-        //OnSensorTriggered();
+        //OnSensorTriggered(EventArgs.Empty);
     }
 }
