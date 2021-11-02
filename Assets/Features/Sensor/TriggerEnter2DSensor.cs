@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class TriggerEnter2DSensor : MonoBehaviour // Change "MonoBehaviour" to "Sensor"
 {
