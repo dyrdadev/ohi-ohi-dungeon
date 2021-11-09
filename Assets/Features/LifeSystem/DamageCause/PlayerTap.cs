@@ -20,7 +20,6 @@ public class PlayerTap : DamageCause
 
     private void Start()
     {
-        _sensor.SensorTriggered.Subscribe(DamageCauseSignalDetected).AddTo(this);
     }
 
     public void DamageCauseSignalDetected(EventArgs args)

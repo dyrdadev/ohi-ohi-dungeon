@@ -11,10 +11,7 @@ public class ScoreLabel : MonoBehaviour
     {
         _text = GetComponent<Text>();
 
-        SetScore(GameData.Instance.score.Value);
-        GameData.Instance.score
-            .Subscribe(score => SetScore(score))
-            .AddTo(this);
+        SetScore(GameData.Instance.score);
     }
 
 
