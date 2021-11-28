@@ -8,7 +8,7 @@ Enter dangerous dungeons with your little companion. Fight demons, orcs and unde
     <br>
     <br>
     <a href="./README.md">
-        <img src="./Media/ohi_ohi_dungeon_github_preview.gif" alt="Gameplay footage from the game Ohi Ohi Dungeon"/>
+        <img src="./Media/ohi_ohi_dungeon_github_preview_undead.gif" alt="Gameplay footage from the game Ohi Ohi Dungeon"/>
     </a>
     <br>
     <br>
