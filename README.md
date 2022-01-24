@@ -18,7 +18,7 @@ Enter dangerous dungeons with your little companion. Fight demons, orcs and unde
 
 ## License & Third Party Content
 
-"Ohi Ohi Dungeon" is licensed under a MIT license. See the [LICENSE](/LICENSE) file for details.
+"Ohi Ohi Dungeon" is licensed under an MIT license. See the [LICENSE](/LICENSE) file for details.
 
 Many assets of this project were created by other people. Check out the [Third Party Content](/ThirdPartyContent.md) file for details. Especially the [Dungeon Tileset ii](https://0x72.itch.io/dungeontileset-ii) assets of [Robert Norenberg (aka 0x72)](http://0x72.pl/) have to be mentioned here. These assets make up the majority of the game's visuals. A special thanks to Robert Norenberg (and the many others) for making their assets available to the public.
 
