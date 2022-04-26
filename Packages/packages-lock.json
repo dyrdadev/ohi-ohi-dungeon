@@ -160,11 +160,11 @@
       "url": "https://packages.unity.com"
     },
     "dev.dyrda.singleton-mono-behaviour": {
-      "version": "https://github.com/dyrdadev/singleton-mono-behaviour.git#0.0.5",
+      "version": "https://github.com/dyrdadev/singleton-mono-behaviour.git#0.0.10",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "10130da391d6428f332e4d02446bf6ce904ecdf5"
+      "hash": "cdf2dda22737c23406778f5849011c520b624caf"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
