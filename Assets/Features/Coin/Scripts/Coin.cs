@@ -8,13 +8,13 @@ public class Coin : MonoBehaviour
     public Sensor collectSensor;
     public int value = 1;
 
-    private void Start()
-    {
-    }
-
     private void Awake()
     {
         animationController.PlaySpawnAnimation();
+    }
+    
+    private void Start()
+    {
     }
 
     public void CollectSignalDetected(EventArgs args)
