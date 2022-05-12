@@ -10,12 +10,10 @@ public class ScoreLabel : MonoBehaviour
     {
         _text = GetComponent<Text>();
 
-        SetScore(GameData.Instance.score);
+        SetLabelText(GameData.Instance.score);
     }
 
-
-
-    private void SetScore(int score)
+    private void SetLabelText(int score)
     {
         _text.text = ""+score;
     }
