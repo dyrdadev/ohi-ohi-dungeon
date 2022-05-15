@@ -11,15 +11,15 @@ public class ScoreLabel : MonoBehaviour
     {
         _text = GetComponent<Text>();
 
-        SetScore(GameData.Instance.score.Value);
+        SetLabelText(GameData.Instance.score.Value);
         GameData.Instance.score
-            .Subscribe(score => SetScore(score))
+            .Subscribe(score => SetLabelText(score))
             .AddTo(this);
     }
 
 
 
-    private void SetScore(int score)
+    private void SetLabelText(int score)
     {
         _text.text = ""+score;
     }
