@@ -24,7 +24,7 @@ Several of the assets used in this project were created by other people. Check o
 
 ## Support & Contribute
 
-This project was created by [Daniel Dyrda](https://dyrda.page). If you want to support me and my projects, you can follow me on [GitHub (dyrdadev)](https://github.com/dyrdadev) and [Mastodon](https://dyrda.page/contact). Just come by and say hello.
+This project was created by [Daniel Dyrda](https://dyrda.page) and migrated to R3 by Martin Schacherbauer. If you want to support Daniel and his projects, you can follow him on [GitHub (dyrdadev)](https://github.com/dyrdadev) and [Mastodon](https://dyrda.page/contact). Just come by and say hello.
 
 If you want to contribute to this project, you are welcome to do so. Just leave me a message and we will find a way to collaborate.
 
