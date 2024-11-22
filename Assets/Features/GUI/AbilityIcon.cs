@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UniRx;
+using R3;
 
 [RequireComponent(typeof(Image))]
 public class AbilityIcon : MonoBehaviour

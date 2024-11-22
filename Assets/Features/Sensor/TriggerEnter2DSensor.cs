@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using UniRx;
+using R3;
 using System;
-using UniRx.Triggers;
+using R3.Triggers;
 
 public class TriggerEnter2DSensor : Sensor
 {

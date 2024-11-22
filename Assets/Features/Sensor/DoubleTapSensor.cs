@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.EventSystems;
-using UniRx;
-using UniRx.Triggers;
+using R3;
+using R3.Triggers;
 
 public class DoubleTapSensor : Sensor
 {
@@ -11,8 +11,8 @@ public class DoubleTapSensor : Sensor
             .OnPointerDownAsObservable();
         
         SensorTriggered = observable
-            .Buffer(observable.Throttle(TimeSpan.FromMilliseconds(150)))
-            .Select(buffer => buffer.Count)
+            .Chunk(observable.Debounce(TimeSpan.FromMilliseconds(150)))
+            .Select(buffer => buffer.Length)
             .Where(count => count == 2)
             .Select(x => EventArgs.Empty);
     }
