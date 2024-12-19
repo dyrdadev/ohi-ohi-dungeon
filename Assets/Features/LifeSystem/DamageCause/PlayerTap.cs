@@ -18,7 +18,7 @@ public class PlayerTap : DamageCause
     {
     }
 
-    public void DamageCauseSignalDetected(EventArgs args)
+    public void DamageCauseSignalDetected(object sender, EventArgs args)
     {
         damageEffect.Trigger(this);
         
