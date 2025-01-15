@@ -5,12 +5,10 @@ using System.Collections.Generic;
 using R3;
 using UnityEngine;
 
-[RequireComponent(typeof(Sensor))]
 [RequireComponent(typeof(Collider2D))]
 public class PushBackHeroAbility : MonoBehaviour
 {
 	private Collider2D _collider;
-	private Sensor activationCause;
 
 	[SerializeField] private float duration = 0.5f;
 	[SerializeField] private float strength = 1f;
@@ -26,8 +24,6 @@ public class PushBackHeroAbility : MonoBehaviour
 	private void Start()
 	{
 		_collider = GetComponent<Collider2D>();
-		activationCause = GetComponent<Sensor>();
-		activationCause.SensorTriggered.Subscribe(ActivateAbility).AddTo(this);
 
 		StartCoroutine(StartCooldown());
 	}
