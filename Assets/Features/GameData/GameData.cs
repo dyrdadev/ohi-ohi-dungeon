@@ -13,8 +13,7 @@ public class GameData : SingletonMonoBehaviour<GameData>
         Orcs
     }
 
-    public int score;
-    
+    public ReactiveProperty<int> score = new ReactiveProperty<int>(0);
     public ReactiveProperty<bool> abilityAvailable = new ReactiveProperty<bool>(false);
    
     [HideInInspector] public LevelTheme currentLevelTheme;
@@ -27,12 +26,12 @@ public class GameData : SingletonMonoBehaviour<GameData>
 
     public void IncreaseScore(int value)
     {
-        score += value;
+        score.Value += value;
     }
 
     public void ResetScore()
     {
-        score = 0;
+        score.Value = 0;
     }
 
     public void SetAbilityAvailable(bool value)
