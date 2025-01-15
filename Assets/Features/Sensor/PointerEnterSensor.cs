@@ -1,6 +1,6 @@
 ﻿using UnityEngine.EventSystems;
-using UniRx;
-using UniRx.Triggers;
+using R3;
+using R3.Triggers;
 using System;
 
 public class PointerEnterSensor : Sensor

@@ -2,7 +2,7 @@ using System;
 using System.Timers;
 using System.Collections;
 using System.Collections.Generic;
-using UniRx;
+using R3;
 using UnityEngine;
 
 [RequireComponent(typeof(Sensor))]

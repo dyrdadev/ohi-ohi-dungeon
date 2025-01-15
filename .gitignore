@@ -23,6 +23,9 @@
 # Visual Studio cache directory
 .vs/
 
+# NuGet
+/[Aa]ssets/Packages/
+
 # Gradle cache directory
 .gradle/
 

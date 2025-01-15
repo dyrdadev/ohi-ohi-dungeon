@@ -1,7 +1,6 @@
 ﻿using System;
-using UnityEngine.EventSystems;
-using UniRx;
-using UniRx.Triggers;
+using R3;
+using R3.Triggers;
 
 public class PointerDownSensor : Sensor
 {
@@ -9,6 +8,6 @@ public class PointerDownSensor : Sensor
     {
         SensorTriggered = this.gameObject.AddComponent<ObservablePointerDownTrigger>()
             .OnPointerDownAsObservable()
-            .Select(e => new SensorEventArgs(e));
+            .Select(e => new SensorEventArgs(e) as EventArgs);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using DyrdaDev.Singleton;
-using UniRx;
+using R3;
 using Random = System.Random;
 
 public class GameData : SingletonMonoBehaviour<GameData>
